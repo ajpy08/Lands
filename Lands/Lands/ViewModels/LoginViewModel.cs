@@ -1,73 +1,39 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Lands.ViewModels
 {
-  class LoginViewModel : INotifyPropertyChanged
+  class LoginViewModel : BaseViewModel
   {
     #region Attributes
+    private string email;
     private string password;
     private bool isRunning;
     private bool isEnabled;
     #endregion
 
     #region Properties
-    public string Email { get; set; }
+    public string Email
+    {
+      get { return this.email; }
+      set { SetValue(ref this.email, value); }
+    }
     public string Password
-    { get
-      {
-        return password;
-      }
-      set
-      {
-        if (password != value)
-        {
-          password = value;
-          PropertyChanged.Invoke(
-            this,
-            new PropertyChangedEventArgs(nameof(Password)));
-        }
-      }
+    {
+      get { return this.password; }
+      set { SetValue(ref this.password, value); }
     }
     public bool IsRunning
     {
-      get
-      {
-        return isRunning;
-      }
-      set
-      {
-        if (isRunning != value)
-        {
-          isRunning = value;
-          PropertyChanged.Invoke(
-            this,
-            new PropertyChangedEventArgs(nameof(IsRunning)));
-        }
-      }
+      get { return this.isRunning; }
+      set { SetValue(ref this.isRunning, value); }
     }
     public bool IsRemembered { get; set; }
     public bool IsEnabled
     {
-      get
-      {
-        return isEnabled;
-      }
-      set
-      {
-        if (isEnabled != value)
-        {
-          isEnabled = value;
-          PropertyChanged.Invoke(
-            this,
-            new PropertyChangedEventArgs(nameof(IsEnabled)));
-        }
-      }
+      get { return this.isEnabled; }
+      set { SetValue(ref this.isEnabled, value); }
     }
     #endregion
 
@@ -140,11 +106,5 @@ namespace Lands.ViewModels
     #region Methods
 
     #endregion
-
-    #region Events
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    #endregion    
   }
 }
