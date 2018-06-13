@@ -4,7 +4,8 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="Lands.Views.LandsPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout
+            BindingContext="{Binding Lands}">
             <Label Text="Lands Page"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
