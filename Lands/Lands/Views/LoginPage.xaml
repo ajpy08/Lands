@@ -13,8 +13,8 @@
                 Text="Lands"
                 />
             <Image
-                Source="logo200.png"
-                WidthRequest="200">
+                Source="logo400.png"
+                WidthRequest="400">
             </Image>
             <Label
                 Text="E-mail">                
