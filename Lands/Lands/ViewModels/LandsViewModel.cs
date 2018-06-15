@@ -42,6 +42,19 @@ namespace Lands.ViewModels
 
     private async void LoadLands()
     {
+      var connection = await apiService.CheckConnection();
+
+      if (!connection.IsSuccess)
+      {
+        await Application.Current.MainPage.DisplayAlert(
+            "Error",
+            connection.Message,
+            "Accept");
+        //Simula un flechita atras del usuario
+        await Application.Current.MainPage.Navigation.PopAsync();
+        return;
+      }
+
       var response = await this.apiService.GetList<Land>(
           "http://restcountries.eu",
           "/rest",
@@ -53,6 +66,8 @@ namespace Lands.ViewModels
             "Error",
             response.Message,
             "Accept");
+        //Simula un flechita atras del usuario
+        await Application.Current.MainPage.Navigation.PopAsync();
         return;
       }
 
