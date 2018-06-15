@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Lands.Models
 {
-  class TokenResponse
+  public class TokenResponse
   {
     #region Properties
     [JsonProperty(PropertyName = "access_token")]
