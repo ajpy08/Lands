@@ -132,9 +132,7 @@ namespace Lands.ViewModels
       {
         return new RelayCommand(Search);
       }
-    }
-
-    
+    }    
 
     #endregion
   }
